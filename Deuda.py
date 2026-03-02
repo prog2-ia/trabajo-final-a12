@@ -11,3 +11,4 @@ class Deuda:
             print("Cantidad insuficiente")
 casa = Deuda(100_000,650)
 print(casa.deuda_restante(5))
+# arreglando un commit
