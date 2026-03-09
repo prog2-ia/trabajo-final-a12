@@ -19,5 +19,5 @@ class Adulto(Familiar):
             self.dinero_ahorrado -= cantidad
             hijo.dinero_ahorrado += cantidad
             return f" {self.nombre} le ha dado {cantidad}€ a {hijo.nombre}."
-        return f" {self.nombre} no tiene fondos para la paga."
+        return f" {self.nombre} no tiene fondos para la paga. "
 
