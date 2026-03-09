@@ -1,9 +1,9 @@
 from Adulto import Adulto
-class Padre(Adulto):
+class Madre(Adulto):
     def __init__(self, nombre, apellido1, apellido2, edad, gastos_fijos, salario, dinero_ahorrado=0):
         super().__init__(nombre, apellido1, apellido2, edad, gastos_fijos, salario, dinero_ahorrado)
 
-    def trabajo_extra(self, horas, precio_hora=20):
-        ganancia = horas * precio_hora
-        self.dinero_ahorrado += ganancia
-        return f" Ingreso extra: {ganancia}€."
+    def generar_intereses(self, porcentaje=0.02):
+        intereses = self.dinero_ahorrado * porcentaje
+        self.dinero_ahorrado += intereses
+        return f"Intereses generados: {intereses:.2f}€."
