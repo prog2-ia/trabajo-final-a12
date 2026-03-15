@@ -8,7 +8,6 @@ class Deuda:
     def reducir_deuda(self, cantidad_pagada):
         self.cantidad_deuda -= cantidad_pagada
         return self.cantidad_deuda
-
     def pagar_deuda(self, deuda):
         if self.cuenta.retirar(deuda.pago_mensual):
             deuda_restante = deuda.reducir_deuda(deuda.pago_mensual)
