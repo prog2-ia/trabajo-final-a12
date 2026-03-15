@@ -1,5 +1,6 @@
+from cuenta_bancaria import CuentaBancaria
 class Familiar:
-    def __init__(self, nombre,apellido1,apellido2,edad,gastos_fijos,paga=0,cuenta):
+    def __init__(self, nombre,apellido1,apellido2,edad,gastos_fijos,cuenta,paga=0):
         self.nombre = nombre
         self.apellido1 = apellido1
         self.apellido2 = apellido2
