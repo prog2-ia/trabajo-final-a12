@@ -1,8 +1,8 @@
 from familiar import Familiar
 from cuenta_bancaria import CuentaBancaria
 class Adulto(Familiar):
-    def __init__(self, nombre, apellido1, apellido2, edad, gastos_fijos, salario, cuenta):
-        super().__init__(nombre, apellido1, apellido2, edad, gastos_fijos, paga=0, cuenta)
+    def __init__(self, nombre, apellido1, apellido2, edad, gastos_fijos, cuenta,salario):
+        super().__init__(nombre, apellido1, apellido2, edad, gastos_fijos, cuenta, paga=0)
         self.salario = salario
 
     def cobrar_nomina(self):
