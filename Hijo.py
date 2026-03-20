@@ -18,3 +18,14 @@ class Hijo(Familiar):
         recompensa = 5
         self.dinero_ahorrado += recompensa
         return f"{self.nombre} ha estudiado {materia} y ha ganado una bonificación de {recompensa}€."
+
+    def realizar_tarea_diaria(self):
+        #La tarea diaria del hijo es ir a la escuela
+        import random
+        materias = ["Matemáticas", "Lengua", "Historia", "Programación"]
+        materia_hoy = random.choice(materias)
+
+        accion = f"{self.nombre} ha ido a la escuela {self.escuela}."
+        estudio = self.hacer_deberes(materia_hoy)
+
+        return f"{accion} {estudio}"
