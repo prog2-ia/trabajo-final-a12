@@ -9,6 +9,16 @@ class Adulto(Familiar):
         self.cuenta.ingresar(self.salario)
         return f"{self.nombre} ha ingresado su salario de {self.salario}€. Saldo: {self.cuenta.saldo}€."
 
+    def realizar_tarea_diaria(self):
+
+        self.dias_trabajados += 1
+
+        if self.dias_trabajados >= 30:
+            return f"{self.nombre} ha trabajado el día 30. " + self.cobrar_nomina()
+        else:
+            return f"{self.nombre} ha ido a trabajar. (Día {self.dias_trabajados}/30 para la nómina)."
+
+
     def dar_paga(self, hijo, cantidad):
         if self.cuenta.retirar(cantidad):
             hijo.cuenta.ingresar(cantidad)
