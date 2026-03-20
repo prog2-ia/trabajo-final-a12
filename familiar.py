@@ -16,3 +16,7 @@ class Familiar(ABC):#Heredar de ABC
             return (f"Has comprado {producto}, te quedan {self.cuenta.saldo}€ en la cuenta.")
         else:
             return (f"No tienes saldo suficiente para comprar {producto}.")
+
+    @abstractmethod #Decorador
+    def realizar_tarea_diaria(self):
+        pass #Función que obliga a que cada familiar diga que hará en su día a día
