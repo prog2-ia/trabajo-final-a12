@@ -5,7 +5,7 @@ from Adulto import Adulto
 from Ahorro import Ahorro
 from agente_financiero import AgenteFinanciero
 from madre_asesora import MadreAsesora
-from Padre import Padre
+from padre import Padre
 from Hijo import Hijo
 if __name__ == '__main__':
     print("PRUEBAS INICIALES")
@@ -30,6 +30,14 @@ if __name__ == '__main__':
     ana = MadreAsesora("Ana", "López", "García", 42, 800, mi_cuenta, 3000)
     ana.realizar_inversión(1000)
     print(ana.realizar_tarea_diaria())
+
+    print("PRUEBA MADRE")
+    mi_cuenta = CuentaBancaria("Ana López", 5000)
+    ana = MadreAsesora("Ana", "López", "García", 42, 800, mi_cuenta, 3000)
+    ana.realizar_inversión(1000)
+    print(ana.cobrar_nomina())
+    ana.dinero_ahorrado = 500
+    print(ana.generar_intereses(0.02))
 
     print("PRUEBA PADRE")
     papa_pepe =Padre("Pepe", "Soto", "Real", 48,600,2200,500)
