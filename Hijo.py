@@ -1,8 +1,10 @@
 from familiar import Familiar
+
 class Hijo(Familiar):
-    def __init__(self, nombre, apellido1, apellido2, edad, gastos_fijos, escuela, paga=0, dinero_ahorrado=0):
-        super().__init__(nombre, apellido1, apellido2, edad, gastos_fijos, paga, dinero_ahorrado)
+    def __init__(self, nombre, apellido1, apellido2, edad, gastos_fijos, cuenta, escuela, paga=0):
+        super().__init__(nombre, apellido1, apellido2, edad, gastos_fijos, cuenta, paga)
         self.escuela = escuela
+        self.dinero_ahorrado = 0
         self.prohibidos = ["tabaco", "videojuegos +18", "apuestas", "alcohol"]
 
     def comprar(self, valor_de_compra, producto):
@@ -20,12 +22,9 @@ class Hijo(Familiar):
         return f"{self.nombre} ha estudiado {materia} y ha ganado una bonificación de {recompensa}€."
 
     def realizar_tarea_diaria(self):
-        #La tarea diaria del hijo es ir a la escuela
         import random
         materias = ["Matemáticas", "Lengua", "Historia", "Programación"]
         materia_hoy = random.choice(materias)
-
         accion = f"{self.nombre} ha ido a la escuela {self.escuela}."
         estudio = self.hacer_deberes(materia_hoy)
-
         return f"{accion} {estudio}"
