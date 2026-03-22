@@ -36,3 +36,10 @@ if __name__ == '__main__':
     print(papa_pepe.trabajo_extra(10,25))
     print(papa_pepe.realizar_tarea_diaria())
 
+    print("PRUEBA HIJO")
+    hijo_luis = Hijo("Luis","Soto","López",10,20,"Colegio Las Rozas",paga = 15)
+    print(hijo_luis.comprar(50, "videojuegos +18"))
+    print(hijo_luis.comprar(5, "Balón de fútbol"))
+    print(hijo_luis.realizar_tarea_diaria())
+    print(hijo_luis.hacer_deberes("Mates"))
+    print(hijo_luis.pedir_paga())
