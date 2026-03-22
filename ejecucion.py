@@ -38,18 +38,19 @@ if __name__ == '__main__':
     print(ana.cobrar_nomina())
     ana.dinero_ahorrado = 500
     print(ana.generar_intereses(0.02))
+    print (ana.realizar_tarea_diaria())
 
     print("PRUEBA PADRE")
-    # 1. Creamos un objeto cuenta específico para Pepe
     cuenta_de_pepe = CuentaBancaria("Pepe Soto", 1000)
     papa_pepe = Padre("Pepe", "Soto", "Real", 48, 600, cuenta_de_pepe, 2200)
     print(papa_pepe.trabajo_extra(10, 25))
     print(papa_pepe.realizar_tarea_diaria())
 
+    print("PRUEBA HIJO")
     cuenta_luis = CuentaBancaria("Luis Soto", 100)
     hijo_luis = Hijo("Luis", "Soto", "López", 10, 20, cuenta_luis, "Colegio Las Rozas", paga=15)
-    print(hijo_luis.comprar(50, "videojuegos +18"))  # Bloqueado por edad
-    print(hijo_luis.comprar(5, "Balón de fútbol"))  # Ahora funcionará porque tiene cuenta
+    print(hijo_luis.comprar(50, "videojuegos +18"))
+    print(hijo_luis.comprar(5, "Balón de fútbol"))
     print(hijo_luis.realizar_tarea_diaria())
     print(hijo_luis.hacer_deberes("Mates"))
     print(hijo_luis.pedir_paga())
