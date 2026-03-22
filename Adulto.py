@@ -4,6 +4,7 @@ class Adulto(Familiar):
     def __init__(self, nombre, apellido1, apellido2, edad, gastos_fijos, cuenta,salario):
         super().__init__(nombre, apellido1, apellido2, edad, gastos_fijos, cuenta, paga=0)
         self.salario = salario
+        self.dias_trabajados = 0
 
     def cobrar_nomina(self):
         self.cuenta.ingresar(self.salario)
