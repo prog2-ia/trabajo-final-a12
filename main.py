@@ -22,6 +22,13 @@ if __name__ == "__main__":
     elif opcion == "4":
         print(usuario.cobrar_nomina())
 
-def guardar_datos(cuenta):
-    with open("datos/cuenta.dat", "wb") as f: #Error si la carpeta 'datos' no existe
-        pickle.dump(cuenta, f)
+import os
+import pickle
+def guardar_datos(objeto, nombre_archivo):
+    # Corregido: Ahora verificamos si existe la carpeta
+    if not os.path.exists('datos'):
+        os.makedirs('datos')
+    ruta = os.path.join('datos', f"{nombre_archivo}.dat")
+    with open(ruta, 'wb') as f:
+        pickle.dump(objeto, f)
+
