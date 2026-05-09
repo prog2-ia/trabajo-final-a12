@@ -18,6 +18,10 @@ def menu():
 if __name__ == "__main__":
     menu()
     elif opcion == "3":
-        print(usuario.realizar_tarea_diaria())  #Método de Adulto
+        print(usuario.realizar_tarea_diaria())
     elif opcion == "4":
-        print(usuario.cobrar_nomina())  #Método de Adulto
+        print(usuario.cobrar_nomina())
+
+def guardar_datos(cuenta):
+    with open("datos/cuenta.dat", "wb") as f: #Error si la carpeta 'datos' no existe
+        pickle.dump(cuenta, f)
