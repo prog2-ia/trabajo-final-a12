@@ -17,3 +17,7 @@ def menu():
 
 if __name__ == "__main__":
     menu()
+    elif opcion == "3":
+        print(usuario.realizar_tarea_diaria())  #Método de Adulto
+    elif opcion == "4":
+        print(usuario.cobrar_nomina())  #Método de Adulto
