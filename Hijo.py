@@ -20,7 +20,14 @@ class Hijo(Familiar):
         recompensa = 5
         self.dinero_ahorrado += recompensa
         return f"{self.nombre} ha estudiado {materia} y ha ganado una bonificación de {recompensa}€."
-
+    # Añado el metodo add para que los hijos puedan sumar su paga y comprar cosas de mas valor
+    def __add__(self, otro):
+        try:
+            # Intentamos sumar asumiendo que 'otro' tiene el atributo 'paga'
+            return self.paga + otro.paga
+        except AttributeError:
+            # Si 'otro' no lo tiene (ej. un string o un int), saltará este error
+            return "Error: No se puede sumar un Hijo con un objeto que no tiene paga."
     def realizar_tarea_diaria(self):
         import random
         materias = ["Matemáticas", "Lengua", "Historia", "Programación"]
