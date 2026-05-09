@@ -48,3 +48,8 @@ elif opcion == "5":
                 # Gestionamos el error de tipo de dato
                 print("Error: Introduce un valor numérico válido.")
 
+from Hijo import Hijo
+        elif opcion == "6":
+            hijo = Hijo("Luis", "Perez", "Gomez", 10, 0, CuentaBancaria("Luis", 0), "Colegio")
+            print(usuario.dar_paga(hijo, 20))
+
