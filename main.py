@@ -25,10 +25,18 @@ if __name__ == "__main__":
 import os
 import pickle
 def guardar_datos(objeto, nombre_archivo):
-    # Corregido: Ahora verificamos si existe la carpeta
     if not os.path.exists('datos'):
         os.makedirs('datos')
     ruta = os.path.join('datos', f"{nombre_archivo}.dat")
     with open(ruta, 'wb') as f:
         pickle.dump(objeto, f)
+
+def cargar_datos(nombre_archivo):
+    ruta = os.path.join('datos', f"{nombre_archivo}.dat")
+    if os.path.exists(ruta):
+        with open(ruta, 'rb') as f:
+            return pickle.load(f)
+    return None
+
+cuenta = cargar_datos("cuenta_principal") or CuentaBancaria("Familia", 1000)
 
