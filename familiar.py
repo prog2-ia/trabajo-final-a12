@@ -22,4 +22,4 @@ class Familiar(ABC):#Heredar de ABC
 
     @abstractmethod #Decorador
     def realizar_tarea_diaria(self):
-        pass #Función que obliga a que cada familiar diga que hará en su día a día
+        pass #función que obliga a que cada familiar diga que hará en su día a día
