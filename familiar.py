@@ -18,7 +18,7 @@ class Familiar(ABC):#Heredar de ABC
             return (f"No tienes saldo suficiente para comprar {producto}.")
 
     def __str__(self):
-        return f"{self.nombre} {self.apellido1} {self.apellido2}" #immprimo el nombre completo
+        return f"{self.nombre} {self.apellido1} {self.apellido2}" #imprimo el nombre completo
 
     @abstractmethod #Decorador
     def realizar_tarea_diaria(self):
