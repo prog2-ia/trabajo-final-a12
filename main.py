@@ -40,3 +40,11 @@ def cargar_datos(nombre_archivo):
 
 cuenta = cargar_datos("cuenta_principal") or CuentaBancaria("Familia", 1000)
 
+elif opcion == "5":
+            try:
+                cantidad = float(input("Cantidad a invertir: "))
+                usuario.realizar_inversión(cantidad)
+            except ValueError:
+                # Gestionamos el error de tipo de dato
+                print("Error: Introduce un valor numérico válido.")
+
