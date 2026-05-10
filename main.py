@@ -7,7 +7,7 @@ def menu():
     # 1. Recogida de datos inicial para crear el objeto
     print("CREACIÓN DE PERFIL DE USUARIO")
     nombre = input("Nombre: ")
-    apellido = input("Apellido: ")
+    apellidos = input("Apellido: ")
 
     try:
         saldo_inicial = float(input("Saldo inicial en cuenta (€): "))
