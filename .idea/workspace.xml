@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41e22892-bee2-4dfa-9c39-107dc8f17686" name="Changes" comment="elimino funcion de guardar datos en la memoria pq daba problemas y hago que se cree el objeto en la inicialización del menú interactivamente" />
+    <list default="true" id="41e22892-bee2-4dfa-9c39-107dc8f17686" name="Changes" comment="elimino funcion de guardar datos en la memoria pq daba problemas y hago que se cree el objeto en la inicialización del menú interactivamente">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -317,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778430789400</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="elimino funcion de guardar datos en la memoria pq daba problemas y hago que se cree el objeto en la inicialización del menú interactivamente">
+      <option name="closed" value="true" />
+      <created>1778431149452</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1778431149452</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
