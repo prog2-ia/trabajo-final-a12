@@ -21,4 +21,4 @@ No hace falta descargar nada extra (sin usar comandos de instalación).
 
 # Instalación y Uso
 Descarga todos los archivos del proyecto en una misma carpeta.
-Abre y pon en marcha el archivo principal (ejecucion.py).
+Abre y pon en marcha el archivo principal (main.py).
