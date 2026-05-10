@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41e22892-bee2-4dfa-9c39-107dc8f17686" name="Changes" comment="elimino funcion de guardar datos en la memoria pq daba problemas y hago que se cree el objeto en la inicialización del menú interactivamente">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="41e22892-bee2-4dfa-9c39-107dc8f17686" name="Changes" comment="Ahora se puede elegir el rol en la creacion del personaje, ya que anteriormente no estaba bien planteado" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -328,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778431149452</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Ahora se puede elegir el rol en la creacion del personaje, ya que anteriormente no estaba bien planteado">
+      <option name="closed" value="true" />
+      <created>1778438779364</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1778438779364</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +351,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="He creado la clase hijo heredada de Familia" />
     <MESSAGE value="Añadido varias funciones: recibir premio por hacer deberes y restricción de compras para productos no aptos" />
     <MESSAGE value="Creado la clase padre heredada de familiar, he añadido funciones básicas de la economía del hogar como cobrar la nómina o pagar gastos, además he añadido que pueda dar paga al hijo" />
     <MESSAGE value="He creado la clase Adulo heredada de familiar, la cual tiene las funciones basicas del adulto en la casa, para así que la clase padre y madre hereden de adulto y no tenga que copiar de nuevo todas las funciones basicas del adulto" />
@@ -371,7 +375,8 @@
     <MESSAGE value="limpieza de código, comentarios finales e integración de clase Hijo" />
     <MESSAGE value="arreglos finales y limpieza correcta del codigo, he añadido contador de 30 dias para cobrar nomina" />
     <MESSAGE value="elimino funcion de guardar datos en la memoria pq daba problemas y hago que se cree el objeto en la inicialización del menú interactivamente" />
-    <option name="LAST_COMMIT_MESSAGE" value="elimino funcion de guardar datos en la memoria pq daba problemas y hago que se cree el objeto en la inicialización del menú interactivamente" />
+    <MESSAGE value="Ahora se puede elegir el rol en la creacion del personaje, ya que anteriormente no estaba bien planteado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ahora se puede elegir el rol en la creacion del personaje, ya que anteriormente no estaba bien planteado" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/trabajo_final_a12$Hijo.coverage" NAME="Hijo Coverage Results" MODIFIED="1773054728090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
