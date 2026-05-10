@@ -1,91 +1,73 @@
-import os
-import pickle
 from cuenta_bancaria import CuentaBancaria
-from Adulto import Adulto
 from Hijo import Hijo
 from agente_financiero import AgenteFinanciero
 
 
-def guardar_datos(objeto, nombre_archivo):4
-    if not os.path.exists('datos'):
-        os.makedirs('datos')
-    ruta = os.path.join('datos', f"{nombre_archivo}.dat")
-    with open(ruta, 'wb') as f:
-        pickle.dump(objeto, f)
-
-
-def cargar_datos(nombre_archivo):
-    ruta = os.path.join('datos', f"{nombre_archivo}.dat")
-    if os.path.exists(ruta):
-        try:
-            with open(ruta, 'rb') as f:
-                return pickle.load(f)
-        except Exception:
-            return None
-    return None
-
-
 def menu():
-    print("SISTEMA DE GESTIÓN ECONÓMICA FAMILIAR")
+    # 1. Recogida de datos inicial para crear el objeto
+    print("CREACIÓN DE PERFIL DE USUARIO")
+    nombre = input("Nombre: ")
+    apellido = input("Apellido: ")
 
-    # Cargamos cuenta y usuario
-    cuenta = cargar_datos("cuenta_principal")
-    if not cuenta:
-        cuenta = CuentaBancaria("Familia Principal", 1000)
+    try:
+        saldo_inicial = float(input("Saldo inicial en cuenta (€): "))
+        salario = float(input("Salario mensual (€): "))
+    except ValueError:
+        print("Error: Se asignarán valores por defecto (1000€ saldo / 1500€ salario).")
+        saldo_inicial = 1000.0
+        salario = 1500.0
 
-    # Cargamos el progreso del usuario si existe, si no lo creamos
-    usuario = cargar_datos("perfil_usuario")
-    if not usuario:
-        usuario = AgenteFinanciero("Juan", "Perez", "Gomez", 40, 600, cuenta, 2000)
-    else:
-        # Aseguramos que el usuario cargado use la cuenta cargada (vincular objetos)
-        usuario.cuenta = cuenta
+    # 2. Inicialización de objetos
+    cuenta = CuentaBancaria(f"Cuenta de {nombre}", saldo_inicial)
+    usuario = AgenteFinanciero(nombre, apellido, "", 30, 500, cuenta, salario)
 
+    print(f"\nUsuario {usuario.nombre} creado correctamente.")
+
+    # 3. Bucle interactivo
     while True:
-        # Mostramos los días trabajados para que el usuario vea su progreso mensual
-        print(f"\n[Día: {usuario.dias_trabajados}/30] | Usuario: {usuario.nombre} | Saldo: {usuario.cuenta.saldo}€")
-        print("1. Ir a trabajar (Avanzar día)")
+        print(f"\n[Día: {usuario.dias_trabajados}/30] | Saldo actual: {usuario.cuenta.saldo}€")
+        print("1. Ir a trabajar (Avanzar 1 día)")
         print("2. Dar paga al hijo (20€)")
-        print("3. Realizar inversión (Riesgo)")
-        print("4. Ver información completa del perfil")
-        print("5. Guardar y Salir")
+        print("3. Realizar inversión (Riesgo aleatorio)")
+        print("4. Ver detalles del perfil")
+        print("5. Salir")
 
         opcion = input("Selecciona una opción: ")
 
         try:
             if opcion == "1":
-                # Al llegar a 30, el método realizar_tarea_diaria() ya llama a cobrar_nomina()
+                # El método realizar_tarea_diaria ya gestiona el cobro al llegar a 30
                 print(usuario.realizar_tarea_diaria())
 
                 if usuario.dias_trabajados >= 30:
                     usuario.dias_trabajados = 0
-                    print("Comienza un nuevo mes laboral")
+                    print("¡Nómina ingresada con éxito!")
 
             elif opcion == "2":
-                hijo = Hijo("Luis", "Perez", "Gomez", 10, 0, CuentaBancaria("Luis", 0), "Colegio")
-                print(usuario.dar_paga(hijo, 20))
+                # Creamos un Hijo para la prueba de transferencia
+                hijo_prueba = Hijo("Luis", "Soto", "López", 10, 20, CuentaBancaria("Luis", 0), "Colegio Local")
+                print(usuario.dar_paga(hijo_prueba, 20))
 
             elif opcion == "3":
-                cantidad = float(input("¿Cuánto dinero quieres arriesgar?: "))
-                usuario.realizar_inversión(cantidad)
+                monto = float(input("¿Cuánto dinero quieres invertir?: "))
+                # Ejecuta la lógica de inversión del agente
+                usuario.realizar_inversión(monto)
 
             elif opcion == "4":
-                # Uso del método __str__ (Aspecto 1: POO)
-                print(f"\n FICHA DE {usuario.nombre.upper()}")
-                print(usuario)
-                print(f"Salario mensual: {usuario.salario}€")
+                print("\nINFORMACIÓN DEL PERFIL")
+                print(f"Titular: {usuario}")  # Usa el __str__ de Familiar
+                print(f"Salario: {usuario.salario}€")
+                print(f"Días trabajados este mes: {usuario.dias_trabajados}")
 
             elif opcion == "5":
-                # Guardamos tanto la cuenta y los dias trabajados
-                guardar_datos(cuenta, "cuenta_principal")
-                guardar_datos(usuario, "perfil_usuario")
-                print("Datos guardados. ¡Buen día!")
+                print("Cerrando el simulador.")
                 break
+
             else:
-                print("Opción inválida.")
+                print("Opción no válida.")
 
         except ValueError:
-            print("Error: Entrada no válida. Introduce números para las cantidades.")
+            print("Error: Introduce un número válido.")
 
 
 if __name__ == "__main__":
